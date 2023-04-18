@@ -1,33 +1,91 @@
-# Project
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/reinmax) 
+![GitHub](https://img.shields.io/github/license/microsoft/reinmax) 
+![PyPI](https://img.shields.io/pypi/v/reinmax) 
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+<h2 align="center">ReinMax</h2>
+<h4 align="center"> Beyond Straight-Through</h4>
 
-As the maintainer of this project, please make a few updates:
+<p align="center">
+  <a href="#st">Straight-Through</a> •
+  <a href="#reinmax">ReinMax</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#examples">Examples</a> •
+  <a href="#citation">Citation</a> •
+  <a href="https://github.com/microsoft/reinmax/tree/main/LICENSE">License</a>
+</p>
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+[ReinMax]() achieves **second-order** accuracy and is **as fast as** the original Straight-Through, which has first-order accuracy.
 
-## Contributing
+<h3 align="center" id="st"><i>Straight-Through</i></h4>
+<!-- ## Straight-Through and How It Works -->
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+Straight-Through (as below) bridges discrete variables (`y_hard`) and back-propagation. 
+```python
+y_soft = theta.softmax()
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+# one_hot_multinomial is a non-differentiable function
+y_hard = one_hot_multinomial(y_soft) 
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+# with straight-through, the derivative of s_hard will
+# act as if you had `p_soft` in the forward
+y_hard = y_soft - y_soft.detach() + y_hard 
+```
+It is a long-standing mystery on how straight-through works, lefting doubts on many problems like whether we should use:
+- `y_soft - y_soft.detach()`,
+- ` (theta/tau).softmax() - (theta/tau).softmax().detach()`,
+- or what?
 
-## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+
+<h3 align="center" id="reinmax"><i>Understand Straight-Through and Go Beyond</i></h3>
+<!-- ## Better Performance with Negligible Computation Overheads -->
+
+[We reveal]() that Straight-Through works as a special case of the forward Euler method, a numerical methods with first-order accuracy. 
+Inspired by Heun's Method, a numerical method achieving second-order accuracy without requiring Hession or other second-order derivatives, we propose ReinMax, which *approximates gradient with second-order accuracy with negligible computation overheads.*
+
+### How to use?
+
+`reinmax` can be installed via `pip`
+```
+pip install reinmax
+```
+
+To replace Straight-Through Gumbel-Softmax with ReinMax: 
+
+```diff
+from reinmax import reinmax
+...
+- y_hard = torch.nn.functional.gumbel_softmax(logits, tau=tau, hard=True)
++ y_hard, _ = reinmax(logits, tau) # note that reinmax prefers to set tau >= 1, while gumbel-softmax prefers to set tau < 1
+...
+```
+
+To replace Straight-Through with ReinMax:
+```diff
+from reinmax import reinmax
+...
+- y_hard = one_hot_multinomial(logits.softmax()) 
+- y_soft_tau = (logits/tau).softmax()
+- y_hard = y_soft_tau - y_soft_tau.detach() + y_hard 
++ y_hard, y_soft = reinmax(logits, tau) 
+...
+```
+### Examples
+
+- [Polynomial Programming](https://github.com/LiyuanLucasLiu/reinmax_examples)
+- [MNIST-VAE](https://github.com/LiyuanLucasLiu/reinmax_examples)
+- [ListOps](https://github.com/LiyuanLucasLiu/reinmax_examples)
+
+### Citation
+Please cite the following papers if you found our model useful. Thanks!
+
+>Liyuan Liu, Xiaodong Liu, Jianfeng Gao, Weizhu Chen, and Jiawei Han (2020). Understanding the Difficulty of Training Transformers. Proc. 2020 Conf. on Empirical Methods in Natural Language Processing (EMNLP'20).
+```
+@inproceedings{liu2020admin,
+  title={Understanding the Difficulty of Training Transformers},
+  author = {Liu, Liyuan and Liu, Xiaodong and Gao, Jianfeng and Chen, Weizhu and Han, Jiawei},
+  booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)},
+  year={2020}
+}
+```
