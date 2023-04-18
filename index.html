@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>ReinMax documentation | ReinMax  documentation</title>
+<link href="_static/pygments.css" rel="stylesheet"/>
+<link href="_static/theme.2e8060a090e1247124e3.css" rel="stylesheet"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="contents.html" rel="prev" title="ReinMax documentation"/>
+</head>
+<body class="antialiased text-gray scroll-smooth">
+<div class="min-h-screen xl:h-screen flex flex-col xl:grid xl:grid-layout print:block print:h-auto" data-action="keydown@window-&gt;search#focus " data-controller="sidebar search " id="page">
+<a class="block transition -translate-x-full focus:translate-x-0 opacity-0 focus:opacity-100 text-xl bg-white p-4 z-20 absolute top-0 left-0 h-14" href="#reinmax-documentation" title="Skip navigation links">Skip to content</a>
+<header class="grid-area-header z-10 h-14 fixed w-full top-0 print:hidden">
+<div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
+<button class="xl:hidden h-14 w-14 leading-14 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
+<span class="sr-only">Open navigation menu</span>
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+</button><a class="hover:bg-gray-700 focus:bg-gray-700 focus:outline-none" href="contents.html" title="Back to homepage"><span class="hidden lg:inline-block shrink-0 font-medium text-gray-100 mx-5 leading-14 tracking-wider">ReinMax  documentation</span>
+</a></div><div class="flex justify-end items-center flex-1"><form action="search.html" class="flex print:hidden justify-between items-center leading-14 md:ml-4 bg-gray-dark text-gray-300 focus-within:bg-gray-50 focus-within:text-gray-800 focus-within:absolute focus-within:inset-x-0 focus-within:top-0 md:focus-within:w-full md:focus-within:static z-10" data-action="click-&gt;search#focusSearchInput" id="searchbox" method="get">
+<button aria-label="Get search results" class="text-inherit h-14 w-14" tabindex="-1">
+<svg aria-hidden="true" class="fill-current stroke-current h-8 w-8" stroke-width="0.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+<input aria-label="Search the docs" class="pr-2 bg-transparent text-inherit focus:outline-none w-0 md:w-auto focus:w-full transition-all duration-100" data-search-target="searchInput" id="search-input" name="q" placeholder="Search the docs" type="search"/>
+</form></div>
+</div>
+</header>
+<aside class="grid-area-sidebar h-full fixed pt-14 xl:relative inset-y-0 left-0 z-20 xl:z-0 print:hidden overflow-y-auto transition-all transform transform-gpu -translate-x-full opacity-0 duration-300 xl:translate-x-0 xl:opacity-100" data-sidebar-target="sidebar">
+<nav class="h-full overflow-y-auto bg-white text-gray-600 pt-8 flex flex-col" role="navigation">
+<div class="nav-toc flex-1 pl-6"><ul class="current">
+<li class="toctree-l1 current expanded"><div class="nav-link"><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">ReinMax documentation</a></div></li>
+</ul>
+</div>
+<button class="text-4xl text-gray-800 p-4 bottom-0 hover:text-brand xl:hidden focus:text-brand self-center" data-action="sidebar#close" title="Close navigation menu">
+<span class="sr-only">Close navigation menu</span>
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</aside>
+<main class="px-4 pt-14 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col flex-1 h-full mx-0 md:mx-auto xl:mr-0"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
+<a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="contents.html">ReinMax  documentation</a>
+<span class="mr-1">/</span><span aria-current="page">ReinMax documentation</span>
+</nav>
+<article class="flex-1" role="main">
+<section id="reinmax-documentation">
+<h1>ReinMax documentation<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#reinmax-documentation">¶</a></h1>
+<p>ReinMax achieves <strong>second-order</strong> accuracy and is <strong>as fast as</strong> the original Straight-Through, which has first-order accuracy.</p>
+<p>We reveal that Straight-Through works as a special case of the forward Euler method, a numerical methods with first-order accuracy.
+Inspired by Heun’s Method, a numerical method achieving second-order accuracy without requiring Hession or other second-order derivatives, we propose ReinMax, which approximates gradient with second-order accuracy with negligible computation overheads.</p>
+<dl class="py function code-definition">
+<dt class="sig sig-object py" id="reinmax.reinmax">
+<code class="sig-prename descclassname">reinmax.</code><code class="sig-name descname">reinmax</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">logits</span><span class="p">:</span><span class="w"> </span><span class="n"><a class="reference external" href="https://pytorch.org/docs/master/tensors.html#torch.Tensor" rel="nofollow noopener" title="(in PyTorch vmaster (2.1.0a0+gitbe0b12e ))">torch.Tensor<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></span></em>, <em class="sig-param"><span class="n">tau</span><span class="p">:</span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" rel="nofollow noopener" title="(in Python v3.11)">float<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#reinmax.reinmax">¶</a></dt>
+<dd>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logits</strong> (<code class="docutils literal notranslate">torch.Tensor</code>, required) – The input Tensor for the softmax. Note that the softmax operation would be conducted along the
+last dimension.</p></li>
+<li><p><strong>tau</strong> (<code class="docutils literal notranslate">float</code>, required) – The temperature hyper-parameter. Note note that reinmax prefers to set tau &gt;= 1, while
+gumbel-softmax prefers to set tau &lt; 1.  For more details, please refer to our paper.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>y_hard</strong> (<code class="docutils literal notranslate">torch.Tensor</code>) – The one-hot sample generated from <code class="docutils literal notranslate">multinomial(softmax(logits))</code>.</p></li>
+<li><p><strong>y_soft</strong> (<code class="docutils literal notranslate">torch.Tensor</code>) – The output of the softmax function, i.e., <code class="docutils literal notranslate">softmax(logits)</code>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Below is an example replacing Straight-Through Gumbel-Softmax with ReinMax</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><del><span class="code-line" id="line-1"><span class="linenos">1</span><span class="n">y_hard</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">gumbel_softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="n">tau</span><span class="p">,</span> <span class="n">hard</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></del><ins><span class="code-line" id="line-2"><span class="linenos">2</span><span class="n">y_hard</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">reinmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">tau</span><span class="p">)</span>
+</span></ins></code></pre></div></div>
+<p>Below is an example replacing Straight-Through with ReinMax</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><del><span class="code-line" id="line-1"><span class="linenos">1</span><span class="n">y_hard</span> <span class="o">=</span> <span class="n">one_hot_multinomial</span><span class="p">(</span><span class="n">logits</span><span class="o">.</span><span class="n">softmax</span><span class="p">())</span>
+</span></del><del><span class="code-line" id="line-2"><span class="linenos">2</span><span class="n">y_soft_tau</span> <span class="o">=</span> <span class="p">(</span><span class="n">logits</span><span class="o">/</span><span class="n">tau</span><span class="p">)</span><span class="o">.</span><span class="n">softmax</span><span class="p">()</span>
+</span></del><del><span class="code-line" id="line-3"><span class="linenos">3</span><span class="n">y_hard</span> <span class="o">=</span> <span class="n">y_soft_tau</span> <span class="o">-</span> <span class="n">y_soft_tau</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span> <span class="o">+</span> <span class="n">y_hard</span>
+</span></del><ins><span class="code-line" id="line-4"><span class="linenos">4</span><span class="n">y_hard</span><span class="p">,</span> <span class="n">y_soft</span> <span class="o">=</span> <span class="n">reinmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">tau</span><span class="p">)</span>
+</span></ins></code></pre></div></div>
+</dd></dl>
+</section>
+</article>
+<footer>
+<div class="mt-20 mb-4 text-sm text-gray-700 print:mt-4">© 2023, Liyuan Liu Made with <a href="https://www.sphinx-doc.org">Sphinx 4.4.0</a></div>
+</footer></main>
+<button class="fixed bottom-0 right-0 z-20 opacity-0 p-4 m-4 tracking-wide bg-gray-900 text-gray-100 transition transform transform-gpu duration-500 translate-y-full" data-action="search#hideSnackbar" data-search-target="snackbar">
+  Clear highlights
+</button><div class="fixed hidden inset-0 bg-black bg-opacity-50" data-action="click-&gt;sidebar#close" data-sidebar-target="screen">
+</div>
+</div>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/theme.b62e1ded0c8c099a2d47.js"></script>
+</body>
+</html>
