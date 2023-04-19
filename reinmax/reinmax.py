@@ -77,7 +77,7 @@ def reinmax(
         :emphasize-removed: 1
         
         y_hard = torch.nn.functional.gumbel_softmax(logits, tau=tau, hard=True)
-        y_hard, _ = reinmax(logits, tau)
+        y_hard, _ = reinmax.reinmax(logits, tau)
         
     Below is an example replacing Straight-Through with ReinMax
     
@@ -89,7 +89,7 @@ def reinmax(
         y_hard = one_hot_multinomial(logits.softmax()) 
         y_soft_tau = (logits/tau).softmax()
         y_hard = y_soft_tau - y_soft_tau.detach() + y_hard 
-        y_hard, y_soft = reinmax(logits, tau)
+        y_hard, y_soft = reinmax.reinmax(logits, tau)
     """
     if tau < 1:
         raise ValueError("ReinMax prefers to set the temperature (tau) larger or equal to 1.")

@@ -1,6 +1,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/reinmax) 
 ![GitHub](https://img.shields.io/github/license/microsoft/reinmax) 
+[![Maintenance](https://img.shields.io/badge/doc-yes-success.svg)](https://microsoft.github.io/reinmax/) 
 ![PyPI](https://img.shields.io/pypi/v/reinmax) 
 
 <h2 align="center">ReinMax</h2>
@@ -15,9 +16,9 @@
   <a href="https://github.com/microsoft/reinmax/tree/main/LICENSE">License</a>
 </p>
 
-[ReinMax]() achieves **second-order** accuracy and is **as fast as** the original Straight-Through, which has first-order accuracy.
+[ReinMax](https://arxiv.org/pdf/2304.08612.pdf) achieves **second-order** accuracy and is **as fast as** the original Straight-Through, which has first-order accuracy.
 
-<h3 align="center" id="st"><i>Straight-Through</i></h4>
+<h3 align="center" id="st"><i>What is Straight-Through</i></h4>
 <!-- ## Straight-Through and How It Works -->
 
 Straight-Through (as below) bridges discrete variables (`y_hard`) and back-propagation. 
@@ -41,7 +42,7 @@ It is a long-standing mystery on how straight-through works, lefting doubts on m
 <h3 align="center" id="reinmax"><i>Understand Straight-Through and Go Beyond</i></h3>
 <!-- ## Better Performance with Negligible Computation Overheads -->
 
-[We reveal]() that Straight-Through works as a special case of the forward Euler method, a numerical methods with first-order accuracy. 
+[We reveal](https://arxiv.org/pdf/2304.08612.pdf) that Straight-Through works as a special case of the forward Euler method, a numerical methods with first-order accuracy. 
 Inspired by Heun's Method, a numerical method achieving second-order accuracy without requiring Hession or other second-order derivatives, we propose ReinMax, which *approximates gradient with second-order accuracy with negligible computation overheads.*
 
 ### How to use?
@@ -80,12 +81,12 @@ from reinmax import reinmax
 ### Citation
 Please cite the following papers if you found our model useful. Thanks!
 
->Liyuan Liu, Xiaodong Liu, Jianfeng Gao, Weizhu Chen, and Jiawei Han (2020). Understanding the Difficulty of Training Transformers. Proc. 2020 Conf. on Empirical Methods in Natural Language Processing (EMNLP'20).
+>Liyuan Liu, Chengyu Dong, Xiaodong Liu, Bin Yu, and Jianfeng Gao (2023). Bridging Discrete and Backpropagation: Straight-Through and Beyond. *ArXiv, abs/2304.08612*.
 ```
-@inproceedings{liu2020admin,
-  title={Understanding the Difficulty of Training Transformers},
-  author = {Liu, Liyuan and Liu, Xiaodong and Gao, Jianfeng and Chen, Weizhu and Han, Jiawei},
-  booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)},
-  year={2020}
+@inproceedings{liu2023bridging,
+  title={Bridging Discrete and Backpropagation: Straight-Through and Beyond},
+  author = {Liu, Liyuan and Dong, Chengyu and Liu, Xiaodong and Yu, Bin and Gao, Jianfeng},
+  booktitle = {arXiv:2304.08612 [cs]},
+  year={2023}
 }
 ```
