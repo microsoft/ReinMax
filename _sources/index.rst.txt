@@ -10,5 +10,6 @@ ReinMax achieves **second-order** accuracy and is **as fast as** the original St
 
 We reveal that Straight-Through works as a special case of the forward Euler method, a numerical methods with first-order accuracy. 
 Inspired by Heun's Method, a numerical method achieving second-order accuracy without requiring Hession or other second-order derivatives, we propose ReinMax, which approximates gradient with second-order accuracy with negligible computation overheads.
+For more details, please check our paper: https://arxiv.org/abs/2304.08612
 
 .. autofunction:: reinmax.reinmax
