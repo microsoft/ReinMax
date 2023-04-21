@@ -74,9 +74,9 @@ from reinmax import reinmax
 ```
 ### Examples
 
-- [Polynomial Programming](https://github.com/LiyuanLucasLiu/reinmax_examples/tree/main/poly)
-- [MNIST-VAE](https://github.com/LiyuanLucasLiu/reinmax_examples/tree/main/mnist_vae)
-- [ListOps](https://github.com/LiyuanLucasLiu/reinmax_examples/tree/main/listops)
+- [Polynomial Programming](https://github.com/LiyuanLucasLiu/reinmax/tree/main/poly)
+- [MNIST-VAE](https://github.com/LiyuanLucasLiu/reinmax/tree/main/mnist_vae)
+- [ListOps](https://github.com/LiyuanLucasLiu/reinmax/tree/main/listops)
 
 ### Citation
 Please cite the following papers if you found our model useful. Thanks!
