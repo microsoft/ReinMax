@@ -1,7 +1,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/reinmax) 
-![GitHub](https://img.shields.io/github/license/microsoft/reinmax) 
-[![Maintenance](https://img.shields.io/badge/doc-yes-success.svg)](https://microsoft.github.io/reinmax/) 
+![GitHub](https://img.shields.io/github/license/microsoft/ReinMax) 
+[![Maintenance](https://img.shields.io/badge/doc-yes-success.svg)](https://microsoft.github.io/ReinMax/) 
 ![PyPI](https://img.shields.io/pypi/v/reinmax) 
 
 <h2 align="center">ReinMax</h2>
